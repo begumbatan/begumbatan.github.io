@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "codepen",
+			"path": "../../Documents/GitHub/begumbatan.github.io/codepen"
+		},
+		{
+			"name": "artistic-drop-cap-design-weekly-challenge",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "artistic-drop-cap-design-weekly-challenge"
+	}
+}
