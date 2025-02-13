@@ -7,11 +7,11 @@
 .vlogo {
     position: absolute;
     top: 3mm;
-    right: 7mm;
+    right: 5mm;
   }
  .score {
     position: absolute;
-    top: 260mm;
+    bottom: 6mm;
     left: 153mm;
   }
 
