@@ -2,7 +2,12 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: blanchedalmond;
+    background-color: #ffff;
+    font-family: Arial, sans-serif;
+
+}
+h1 {
+    font-family: Arial, sans-serif;
 }
 nav{
     height: 50vh;
@@ -10,37 +15,68 @@ nav{
     flex-direction: row;
     justify-content: space-between;
     height:20px;
-    background-color: blueviolet;
+    background-color: #ba4272;
 }
 nav a{
     width:10vw;
     text-align: center;
     text-decoration: none;
     color:black;
+
 }
-
-
-img{
-    width:30vw;
-    height: 30vh;
+nav ul{
+   
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 980px;
+    display: flex;
+    flex-direction: row;
+    
+  
+}
+nav:hover{
+    background-color: purple;
 }
 
 #red-ball{
-    background-color: crimson;
+    background-color: #ba4272;
     width: 20px;
     height:20px;
     border-radius: 50%;
     position: absolute;
     left:5vw;
     top:0;
+    animation-name: red-ball;
+    animation-name: red-ballmove; 
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
-ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  
-  }
+
+@keyframes red-ballmove{
+    0% {
+        top: 0;
+        left: 0;
+    }
+
+    25% {
+        top: 0;
+        left: 50vw;
+
+    }
+    50% {
+        top: 50vh;
+        left: 50vw;
+    }
+
+    75% {
+        top: 50vw;
+        left: 0vw;
+
+    }
+
+    100% {
+        top: 0vh;
+        left: 0vw;
+    }
+}
