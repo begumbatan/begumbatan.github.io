@@ -28,6 +28,7 @@ nav a{
 
 }
 
+
 nav ul{
    
     margin: 0 auto;
@@ -38,7 +39,7 @@ nav ul{
     
   
 }
-nav:hover{
+#nav:hover{
     background-color: purple;
 }
 
