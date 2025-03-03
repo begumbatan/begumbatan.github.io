@@ -6,9 +6,11 @@ body{
     font-family: Arial, sans-serif;
 
 }
+
 h1 {
     font-family: Arial, sans-serif;
 }
+
 nav{
     height: 50vh;
     display:flex;
@@ -17,6 +19,7 @@ nav{
     height:20px;
     background-color: #ba4272;
 }
+
 nav a{
     width:10vw;
     text-align: center;
