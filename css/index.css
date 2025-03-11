@@ -1,0 +1,139 @@
+
+img5{
+  padding-bottom: none;
+
+}
+
+body{
+    background-color: black;
+.bodyimg2{
+  padding-left: 7em;
+}
+.bodyimg1{
+  padding-right: 7em;
+}
+.bodyimg3{
+  padding-right: 7em;
+}
+.bodyimg4{
+  padding-left: 7em;
+}
+
+}
+html {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: fff7e8;
+    font-size: 13pt;
+    background-color: black;
+
+
+  }
+
+.meat {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+  }
+
+#consert1{
+  border-style: solid;
+  padding: 1em;
+  background-color: #fff7e8;
+  margin-right: 0em;
+  margin-left: 7em;
+}
+
+#consert2{
+  border-style: solid;
+  padding: 1em;
+  background-color: #fff7e8;
+  margin-right: 0em;
+  margin-left: 7em;
+}
+
+#consert3{
+  border-style: solid;
+  padding: 1em;
+  background-color: #fff7e8;
+  margin-right: 7em;
+  margin-left: 0em;
+}
+#consert4{
+  border-style: solid;
+  padding: 1em;
+  background-color: #fff7e8;
+  margin-right: 7em;
+  margin-left: 0em;
+}
+#consert5{
+  border-style: solid;
+  padding: 1em;
+  background-color: #fff7e8;
+  margin-right: 0em;
+  margin-left: 7em;
+}
+#consert6{
+  border-style: solid;
+  padding: 1em;
+  background-color: #fff7e8;
+  margin-right: 7em;
+  margin-left: 0em;
+}
+#consert7{
+  border-style: solid;
+  padding: 1em;
+  background-color: #fff7e8;
+  margin-right: 0em;
+  margin-left: 7em;
+}
+#consert8{
+  border-style: solid;
+  padding: 1em;
+  background-color: #fff7e8;
+  margin-right: 0em;
+  margin-left: 7em;
+}
+#consert9{
+  border-style: solid;
+  padding: 1em;
+  background-color: #fff7e8;
+  margin-right: 7em;
+  margin-left: 0em;
+}
+#consert10{
+  border-style: solid;
+  padding: 1em;
+  background-color: #fff7e8;
+  margin-right: 0em;
+  margin-right: 7em;
+}
+
+nav {
+  background-color: #723D46;
+  padding: .5em;
+  position: sticky;
+  top: 0;
+
+}
+
+nav ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: .5em 1em;
+
+}
+img2{
+  padding-right: 10em;
+}
