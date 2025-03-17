@@ -271,9 +271,9 @@ footer {
     padding-right: 0px;
 
   }
-  #lights img{
-    width: 400px; 
-    height: 400px;
+  .bodyimg2 img{
+    width: 100%; 
+    height: 100%;
   }
   #lights3 img{
     width: 400px; 
