@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: olive;
+            border: 5px solid red;
+            height: 200px;
+            width: 200px;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="name">Hello!</h1>
+    <button>Click me!</button>
+    <div class = "box"></div>
+    <script>
+        let box = document. querySelector ('.box');
+        box. addEventListener('click', changeColor);
+
+        function randomNumber(){
+            let r = Math.floor(Math.random() * (255-0 + 1) + 1);
+            let g = Math.floor(Math.random() * (255-0 + 1) + 1);
+            let b = Math.floor(Math.random() * (255-0 + 1) + 1);
+            return('rgb('+ r + ',' + g + ',' + b + ')')
+        }
+
+        function changeColor(){
+            let col = randomNumber();
+            let colString = "background-color: " + col + ";"
+            box.style = colString;
+        }
+        console. log ('Hello World!');
+        let btn = document. querySelector ('button');
+        btn.addEventListener('click', updateName);
+        function updateName (){
+            let name = document. querySelector (' ‚name');
+            const input = prompt ('Enter a new name!');
+            name. textContent = input;
+        }
+
+    </script>
+</body>
+</html>
