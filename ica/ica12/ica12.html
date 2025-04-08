@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    
+    <link rel="stylesheet" href="ica12.css">
+    <div class="app">
+        <section class="controls" >
+          <header>Random Christmas Trivia</header>
+          <section class="quotes">
+            <div class="quote-text" id="js-quote-text"></div>
+            <div class="quote-text" id="js-answer-text"></div>
+          </section>
+          <section class="controls" >
+            <button type="button" id="js-new-quote" class="new-quote button">
+              Generate a new bit of trivia!
+            </button>
+          <button type="button" id="js-tweet" class="twitter button">
+            Show me the answer!
+          </button>
+          <!-- <a class="answer button" id="js-tweet" target="_blank" rel="noreferrer">Show me the answer!</a> -->
+        </section>
+      </div>
+      <script src="ica12.js"></script>
+      <script>
+        var newBtn = document.querySelector('#js-new-quote').addEventListener('click', getQuote);
+        var answerBtn = document.querySelector('#js-tweet').addEventListener('click', () => displayAnswer(current.answer));
+        var endpoint = "https://trivia.cyberwisp.com/getrandomchristmasquestion";
+        
+        let current = {
+            question: "",
+            answer: ""
+        };
+        
+        async function getQuote() {
+            try {
+                const response = await fetch (endpoint);
+
+                if (!response.ok) {
+                    throw Error (response.statusText);
+                }
+                const json = await response.json();
+                displayQuote(json.question);
+                current.question = json.question;
+                current.answer = json.answer;
+            }
+            catch(err) {
+                console. log(err);
+                alert ('Fail');
+            }
+        }
+
+        function displayQuote(quote){
+            const quoteText = document. querySelector ('#js-quote-text');
+            quoteText. textContent = quote;
+        }
+
+        function displayAnswer(answer){
+            const answerText = document.querySelector ('#js-answer-text');
+            answerText.textContent = answer;
+        }
+
+        getQuote();
+      </script>
+</body>
+</html>
