@@ -5,32 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="wa12.css">
-    <title>Document</title>
+    <title>Random</title>
 </head>
 <body>
-    <div class="app">
-        <header>Random Dinosaurs</header>
-        <section class="quotes">
-          <div class="quote-text" id="js-quote-text"></div>
-          <div class="quote-text" id="js-answer-text"></div>
-          <div id="js-dino-text" class="quote-text"></div>
 
+  <header>Generate random facts, lucky numbers, and names.</header>
+    <div class="app">
+        <header>Random facts, numbers, and names!</header>
+        <section class="facts">
+          <div class="fact-text" id="js-trivia-text"></div>
+          <div class="fact-text" id="js-answer-text"></div>
+          <div class="fact-text" id="js-name-text"></div>
         </section>
         <section class="controls" >
-          <button type="button" id="js-new-quote" class="new-quote button">
-            Generate a new bit of random trivia!
+            <button type="button" id="js-trivia" class="trivia button">
+                Generate a random useless fact!
           </button>
-          <button type="button" id="js-tweet" class="twitter button">
-            Show me the answer!
+          <button type="button" id="js-answer" class="answer button">
+            Generate your lucky numbers!
           </button>
-          <!-- <a class="answer button" id="js-tweet" target="_blank" rel="noreferrer">Show me the answer!</a> -->
-          <button type="button" id="js-show-name" class="button new-quote">
-            Tell me a dinosaur name!
 
+          <button type="button" id="js-name" class="name button">
+            Generate a name!
           </button>
         </section>
       </div>
       <script src="wa12.js"></script>
-      <p>This extension gives you random trivia, sometimes about Dinosaurs and will generate a random dinosaur name.</p>
 </body>
 </html>

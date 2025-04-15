@@ -1,19 +1,21 @@
 html {
     box-sizing: border-box;
-    }
-    *,
-    *::before,
-    *::after {
+  }
+  
+  *,
+  *::before,
+  *::after {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
-    }
-    body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-
-    Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    background-color: pink;
-    }
-    .app {
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    background-color: #FFE1A8;
+  }
+  
+  .app {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -21,30 +23,34 @@ html {
     width: 600px;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px
-    5px 0 rgba(0,0,0,.12);
-    }
-    header {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  }
+  
+  header {
     width: 100%;
     font-size: 30px;
     text-align: center;
     padding: 10px;
     border-bottom: 1px solid #ebebeb;
-    }
-    .quotes {
+  }
+  
+  .facts {
     padding: 20px 50px;
     min-height: 200px;
-    }
-    .quote-text {
+  }
+  
+  .fact-text {
     padding-bottom: 20px;
     font-size: 25px;
     color: black;
-    }
-    .controls {
+  }
+  
+  .controls {
     width: 100%;
     padding: 20px 50px;
-    }
-    .button {
+  }
+  
+  .button {
     display: block;
     color: white;
     border-radius: 4px;
@@ -54,38 +60,50 @@ html {
     text-align: center;
     width: 100%;
     font-size: 20px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px
-    5px 0 rgba(0,0,0,.12);
-    }
-    .twitter {
-    background-color: #1da1f2;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+  }
+  
+  .answer {
+    background-color: #008148;
     text-decoration: none;
-    }
-    .twitter:hover {
-    background-color: #1e7fbb;
-    }
-    .new-quote {
-    background-color: #4A2B0F;
+  }
+  
+  .answer:hover {
+    background-color: #C6C013;
+  }
+  
+  .trivia {
+    background-color: #008148;
     margin-bottom: 15px;
-    }
-    .new-quote a {
-        font-size: 100em;
-        }
-    .new-quote:hover {
-    background-color: #6d3b0e;
-    }
-    .new-quote:disabled {
-    background-color: pink;
+  }
+  
+  .trivia:hover {
+    background-color: #C6C013;
+  }
+  
+  .trivia:disabled {
+    background-color: #008148;
     color: #666666;
     cursor: not-allowed;
-    }
-    @media screen and (max-width: 600px) {
+  }
+
+  .name{
+    background-color: #008148;
+    margin-top: 15px;
+
+  }
+
+  .name:hover {
+    background-color: #C6C013;
+  }
+  
+
+
+  @media screen and (max-width: 600px) {
     .app {
-    width: 100%;
+      width: 100%;
     }
-    .quote-text {
-    font-size: 18px;
+    .fact-text {
+      font-size: 18px;
     }
-   
-    
-    }
+  }

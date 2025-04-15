@@ -1,76 +1,88 @@
-const newBtn = document.querySelector('#js-new-quote');
-const answerBtn = document.querySelector('#js-tweet');
-const dinoNameBtn = document.querySelector('#js-show-name');
+var triviaBtn = document.querySelector('#js-trivia').addEventListener('click', getTrivia);
+var answerBtn = document.querySelector('#js-answer').addEventListener('click', getAnswer);
+var nameBtn = document.querySelector('#js-name').addEventListener('click', getName);
 
-const questionText = document.querySelector('#js-quote-text');
-const answerText = document.querySelector('#js-answer-text');
-const dinoNameText = document.querySelector('#js-dino-text');
+var endpointTrivia = "https://uselessfacts.jsph.pl/api/v2/facts/random";
+var endpointAnswer = "https://randomuser.me/api?nat=US";
+var endpointName = "https://randomuser.me/api?nat=US"
 
-const triviaEndpoint = "https://opentdb.com/api.php?amount=1&category=17&type=multiple";
-
-let current = {
-  question: "",
-  answer: ""
+let currentTrivia = {
+    text: "",
 };
+let currentAnswer ={
+    fact:"",
+    
+}
 
-newBtn.addEventListener('click', getQuote);
-answerBtn.addEventListener('click', () => displayAnswer(current.answer));
-dinoNameBtn.addEventListener('click', getDinoName);
-
-async function getQuote() {
-  try {
-    const response = await fetch(triviaEndpoint);
-    if (!response.ok) {
-      throw new Error(response.statusText);
+let currentName = {
+    name: "",
+}
+async function getTrivia(){
+    try{
+        const response = await fetch(endpointTrivia);
+        if(!response.ok){
+            throw Error(response.statusText);
+        }
+        const json = await response.json();
+        displayTrivia(json.text);
+        currentTrivia.text = json.text;
     }
+    catch(err){
+        console.log(err);
+        alert('Failed to get fact');
+    }
+}
 
-    const data = await response.json();
-    const trivia = data.results[0];
-
-    // Decode HTML entities
-    const parser = new DOMParser();
-    const question = parser.parseFromString(trivia.question, "text/html").body.textContent;
-    const answer = parser.parseFromString(trivia.correct_answer, "text/html").body.textContent;
-
-    current.question = question;
-    current.answer = answer;
-
-    displayQuote(question);
-    answerText.textContent = ''; // Clear previous answer
-  } catch (err) {
-    console.error(err);
-    alert('Failed to fetch trivia!');
+async function getAnswer() {
+    try {
+      const responseAnswer = await fetch(endpointAnswer);
+      if (!responseAnswer.ok) {
+        throw Error(responseAnswer.statusText);
+      }
+      const json = await responseAnswer.json();
+      
+      // Extract the street number from the location object
+      const streetNumber = json.results[0].location.street.number; // Access the street number
+      displayAnswer(streetNumber);
+      currentAnswer.fact = streetNumber;
+    } catch (err) {
+      console.log(err);
+      alert('Failed to get number');
+    }
   }
-}
+  
 
-function displayQuote(quote) {
-  questionText.textContent = quote;
-}
-
-function displayAnswer(answer) {
-  answerText.textContent = answer;
-}
-
-async function getDinoName() {
-  try {
-    const response = await fetch("https://dinosaur-facts-api.shultzlab.com/dinosaurs/random/name");
-    if (!response.ok) {
-      throw new Error(response.statusText);
+async function getName(){
+    try{
+        const responseName = await fetch(endpointName);
+        if(!responseName.ok){
+            throw Error(responseName.statusText);
+        }
+        const json = await responseName.json();
+    const fullName = `${json.results[0].name.first} ${json.results[0].name.last}`;
+    displayName(fullName);
+    currentName.name = fullName;
     }
-
-    const json = await response.json();
-
-    // If you want to display it somewhere, make sure #js-dino-text exists in your HTML
-    if (dinoNameText) {
-      dinoNameText.textContent = json.name;
-    } else {
-      alert(`Dino name: ${json.name}`);
+    catch(err){
+        console.log(err);
+        alert('Failed to get name');
     }
-  } catch (err) {
-    console.error(err);
-    alert("Failed to fetch dino name");
-  }
 }
 
-// Load a trivia question on initial page load
-getQuote();
+function displayTrivia(trivia){
+    const triviaText = document.querySelector('#js-trivia-text');
+    triviaText.textContent = trivia;
+}
+
+function displayAnswer(answer){
+    const answerText = document.querySelector ('#js-answer-text');
+    answerText.textContent = answer;
+}
+
+function displayName(name){
+    const nameText = document.querySelector ('#js-name-text');
+    nameText.textContent = name;
+}
+getTrivia();
+getAnswer();
+getName();
