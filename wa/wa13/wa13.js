@@ -1,5 +1,6 @@
 
 // Question 1
+
 const employees = [
   {
     firstName: "Sam",
