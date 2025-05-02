@@ -1,43 +1,43 @@
+ // JSON Definition at the Top
+const empJSON = {
+  employees: [
+    {
+      firstName: "Sam",
+      department: "Tech",
+      designation: "Manager",
+      salary: 40000,
+      raiseEligible: true
+    },
+    {
+      firstName: "Mary",
+      department: "Finance",
+      designation: "Trainee",
+      salary: 18500,
+      raiseEligible: true
+    },
+    {
+      firstName: "Bill",
+      department: "HR",
+      designation: "Executive",
+      salary: 21200,
+      raiseEligible: false
+    }
+  ]
+};
 
 // Question 1
-
-const employees = [
-  {
-    firstName: "Sam",
-    department: "Tech",
-    designation: "Manager",
-    salary: 40000,
-    raiseEligible: true
-  },
-  {
-    firstName: "Mary",
-    department: "Finance",
-    designation: "Trainee",
-    salary: 18500,
-    raiseEligible: true
-  },
-  {
-    firstName: "Bill",
-    department: "HR",
-    designation: "Executive",
-    salary: 21200,
-    raiseEligible: false
-  }
-];
-
 console.log("Question 1");
-console.log(workers);
+console.log(empJSON.employees);
 
 // Question 2
 const company = {
   companyName: "Tech Stars",
   website: "www.techstars.site",
-  employees: employees
+  employees: empJSON.employees
 };
 
 console.log("Question 2");
 console.log(company);
-
 
 // Question 3
 const newEmployee = {
@@ -53,18 +53,15 @@ company.employees.push(newEmployee);
 console.log("Question 3:");
 console.log(company);
 
-
 // Question 4
 let total = 0;
-for (x in company.employees.employees)
-  {
-    total += company.employees.employees[x].salary;
-  }
+for (const employee of company.employees) {
+  total += employee.salary;
+}
 console.log("Question 4")
 console.log("Total salary:", total);
 
 // Question 5
-
 function raise() {
   for (let i = 0; i < company.employees.length; i++) {
     const employee = company.employees[i];
@@ -75,19 +72,17 @@ function raise() {
   }
 }
 
-raise(company);
+raise();
 
 console.log("Question 5:");
 console.log(company);
 
-
 // Question 6
-
 const home = ['Anna', 'Sam'];
 
 function wfh(company, wfhList) {
   company.employees.forEach(employee => {
-    employee.wfh = (employee.firstName === 'Anna' || employee.firstName === 'Sam');
+    employee.wfh = wfhList.includes(employee.firstName);
   });
 }
 
